@@ -25,13 +25,16 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     // Construtores
     // Construtor sem argumentos
     public Game(){ 
-
     }
     
     // Construtor com argumentos
