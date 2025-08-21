@@ -1,4 +1,4 @@
-package com.example.dslist.controller;
+package com.example.dslist.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
