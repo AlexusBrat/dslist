@@ -2,6 +2,7 @@ package com.example.dslist.controllers;
 
 import java.util.List;
 
+import com.example.dslist.dto.GameMinDTO;
 import com.example.dslist.entities.Game;
 import com.example.dslist.services.GameService;
 
@@ -25,8 +26,18 @@ public class GameController {
         return new String();
     }
     
-    public List<Game> findAll() {
+    public List<GameMinDTO> findAll() {
         List<Game> result = gameService.findAll();
-        return result;
+        List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList();
+        return dto;
     }
+
+
+    // Método para listar os dados da API fornecida pelo controller no formato DTO no protocolo HTTP, implementado para teste
+    // @GetMapping
+    // public List<GameMinDTO> findAll() {
+    //     List<Game> result = gameService.findAll();
+    //     List<GameMinDTO> dto = result.stream().map(GameMinDTO::new).toList(); // forma mais concisa.toList();
+    //     return dto;
+    // }
 }
